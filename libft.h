@@ -6,27 +6,34 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 03:26:06 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/14 07:26:24 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/15 10:29:03 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <stdlib.h>
 
-int		        ft_atoi(char *str);
-int             ft_isalnum(int c);
-int             ft_isalpha(int c);
-int             ft_isascii(int c);
-int             ft_isdigit(int c);
-int             ft_isprint(int c);
-char            *ft_strchr(const char *s, int c);
-char	        *ft_strdup(char *src);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
-int	            ft_strlen(char *str);
-int             ft_strncmp(const char *s1, const char *s2, size_t n);
-int             ft_tolower(int c);
-int             ft_toupper(int c);
+int				ft_atoi(char *str);
+int				ft_isalnum(int c);
+int				ft_isalpha(int c);
+int				ft_isascii(int c);
+int				ft_isdigit(int c);
+int				ft_isprint(int c);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strdup(char *src);
+size_t			ft_strlcat(char *dest, char *src, size_t size);
+size_t			ft_strlen(char *str);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
+char			*ft_strrchr(const char *s, int c);
+int				ft_tolower(int c);
+int				ft_toupper(int c);
+char			*ft_strnstr(const char *s1, const char *s2, size_t n);
+void			*ft_memset (void *s, int c, size_t n);
+void			ft_bzero(void *s, size_t n);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
+void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
+int				ft_memcmp(const void *s1, const void *s2, size_t n);
 
 #endif

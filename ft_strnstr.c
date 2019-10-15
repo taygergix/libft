@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/03 15:16:54 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/14 10:49:56 by tamather         ###   ########.fr       */
+/*   Created: 2019/10/14 11:33:48 by tamather          #+#    #+#             */
+/*   Updated: 2019/10/14 12:41:23 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	int n;
+	size_t i;
+	size_t j;
+	size_t k;
 
-	n = 0;
-	while (*str != '\0')
+	i = 0;
+
+	while (s2 && i < n + 1)
 	{
-		n++;
-		str++;
+		j = 0;
+		k = 0;
+		while (s1[k] == s2[j] && s1[k] && s2[j])
+		{
+			j++;
+			k++;
+		}
+		if (s1[k] == '\0' || i + k > n + 1)
+			return ((char*)s2);
+		s2++;
 	}
-	return (n);
+	return ((char*)s2);
 }

@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 23:29:39 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/14 03:31:06 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/15 10:12:26 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ int		ft_atoi(char *str)
 	while (*str == ' ' || *str == '\t' || *str == '\v'
 		|| *str == '\f' || *str == '\r' || *str == '\n')
 		str++;
-	while (*str == '+' || *str == '-')
+	if (*str == '-')
 	{
-		if (*str == '-')
-			c++;
+		c++;
 		str++;
 	}
+	else if (*str == '+')
+		str++;
 	while (*str <= '9' && *str >= '0')
 	{
 		in = in * 10;
 		in = (in + *str - '0');
 		str++;
 	}
-	c = c % 2;
 	if (c)
 		in = -1 * in;
 	return (in);

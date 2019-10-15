@@ -6,23 +6,22 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 03:10:41 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/14 05:52:04 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/14 10:49:53 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_strlen.c"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int j;
+	size_t i;
+	size_t j;
 
 	i = -1;
 	while (++i < size && *dest)
 		dest++;
 	if (i == size)
-		return (i + (unsigned int)ft_strlen(src));
+		return (i + ft_strlen(src));
 	j = -1;
 	while (src[++j])
 		if (j < size - i - 1)

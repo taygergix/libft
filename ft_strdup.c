@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 13:34:21 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/14 06:01:30 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/14 13:05:45 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(char *src)
 {
 	char *cpy;
 
-	if (!(cpy = malloc(sizeof(char) * ft_strlen(src))))
+	if (!(cpy = malloc(sizeof(char) * ft_strlen(src) + 1)))
 		return (0);
 	return (ft_strcpy(cpy, src));
 }
