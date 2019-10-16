@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 03:26:06 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/16 05:20:22 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/16 12:11:30 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 int				ft_atoi(char *str);
 int				ft_isalnum(int c);
@@ -37,5 +38,7 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void            *ft_memchr(const void *s, int c, size_t n);
 void            *ft_memmove(void *dest, const void *src, size_t n);
+void            *ft_calloc(size_t nmemb, size_t size);
+void            ft_putchar_fd(char c, int fd);
 
 #endif
