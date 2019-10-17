@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:03:29 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/17 13:12:37 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/17 13:37:15 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,19 @@
 
 void ft_putnbr_fd(int n, int fd)
 {
-    if (n > -2147483648 && n <= 2147483647)
+	long int tmp;
+
+	tmp = n;
+	if (tmp < 0)
 	{
-		if (n != -2147483648)
-		{
-			if (n < 0)
-			{
-				n = n * -1;
-				ft_putchar_fd('-', fd);
-			}
-			if (n > 9)
-			{
-				ft_putnbr_fd(n / 10, fd);
-				ft_putchar_fd(n % 10 + 48, fd);
-			}
-			if (n < 10)
-				ft_putchar_fd(n + 48, fd);
-		}
-		else
-			write(1, "-2147483648", 11);
+	tmp = tmp * -1;
+	ft_putchar_fd('-', fd);
 	}
+	if (tmp > 9)
+	{
+	ft_putnbr_fd(tmp / 10, fd);
+	ft_putchar_fd(tmp % 10 + 48, fd);
+	}
+	if (tmp < 10)
+	ft_putchar_fd(tmp + 48, fd);
 }
