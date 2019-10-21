@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 03:26:06 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/17 13:00:23 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/21 11:49:49 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ void            ft_putchar_fd(char c, int fd);
 void            ft_putstr_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putendl_fd(char *s, int fd);
+char            *ft_itoa(int n);
 
 #endif
