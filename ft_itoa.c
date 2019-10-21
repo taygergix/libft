@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 11:03:10 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/21 13:16:47 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:44:34 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ char *ft_itoa(int n)
     char *a;
     int i;
 
-    if(!(a = ft_calloc(sizeof(char), count_int_size(n) + ((n < 0) ? 2 : 1))))
+    if(!(a = malloc(sizeof(char) * (count_int_size(n) + ((n < 0) ? 2 : 1)))))
         return (0);
     i = count_int_size(n) + ((n < 0) ? 0 : -1);
-    a[count_int_size(n) + ((n < 0) ? 2 : 1)] = '\0';
+    a[i + 1] = '\0';
     while(((n < 0) ? n <= -10 : n >= 10))
     {
         a[i] = ((n % 10) * ((n < 0) ? -1 : 1)) + '0';
