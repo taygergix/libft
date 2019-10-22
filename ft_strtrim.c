@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 12:46:48 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/22 13:02:15 by tamather         ###   ########.fr       */
+/*   Created: 2019/10/22 13:29:24 by tamather          #+#    #+#             */
+/*   Updated: 2019/10/22 17:15:14 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int		is_charset(char c, char *set)
 {
-	while (*s)
-		write(fd, s++, 1);
+	while (*set)
+	{
+		if (*set == c)
+			return (c);
+		set++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int i;
+	int len;
+
+	i = 0;
+	len = ft_strlen((char*)s1);
+	while (is_charset(s1[i], (char*)set))
+		i++;
+	while ((len - i) && is_charset(s1[len - 1], (char*)set))
+		len--;
+	return (ft_substr(s1, i, len - i));
 }
