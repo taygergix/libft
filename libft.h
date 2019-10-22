@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 03:26:06 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/22 17:34:43 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/22 18:19:51 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ char            *ft_itoa(int n);
 char            *ft_substr(char const *s, unsigned int start, size_t len);
 char            *ft_strtrim(char const *s1, char const *set);
 char            *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-
+char            **ft_split(char const *s, char c);
 #endif

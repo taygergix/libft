@@ -6,7 +6,7 @@
 #    By: tamather <tamather@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 08:30:12 by taygergix         #+#    #+#              #
-#    Updated: 2019/10/22 17:35:28 by tamather         ###   ########.fr        #
+#    Updated: 2019/10/22 18:08:19 by tamather         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,14 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
+HEADER = -I ./
+
 NAME = libft.a
 
 OBJS = ${SRCS:.c=.o}
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.c=.o}
 
 $(NAME): 	${OBJS}
 			ar rc ${NAME} ${OBJS}
