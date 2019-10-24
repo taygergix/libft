@@ -6,109 +6,94 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:40:10 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/16 11:55:22 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:38:55 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_charset(char c, char charset)
-{
-	int i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (charset[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int		count_word(char *str, char charset)
+int		word_count(char const *s, char c)
 {
 	int i;
 	int w;
 
 	i = 0;
 	w = 0;
-	while (str[i])
+	while (s[i])
 	{
-		if (!(is_charset(str[i], charset)))
-		{
-			while (str[i] && (!is_charset(str[i], charset)))
-				i++;
+		if (i > 0 && (size_t)i > ft_strlen((char*)s) && s[i] == c)
 			w++;
-		}
-		else
-			i++;
+		i++;
 	}
 	return (w);
 }
 
-int		word_len(char *str, char charset, int p)
+int		word_len(char const *s, char c, int pos)
 {
 	int i;
-	int w;
-	int l;
+	int len;
 
 	i = 0;
-	w = 0;
-	l = 0;
-	while (str[i])
+	len = 0;
+	while (s[i])
 	{
-		if (!(is_charset(str[i], charset)))
+		if ((i > 0 && (size_t)i > ft_strlen((char*)s) && s[i] == c && pos > -1)
+			|| pos == 0)
 		{
-			while (str[i] && (!is_charset(str[i], charset)))
+			i++;
+			if (!pos)
 			{
-				i++;
-				if (w == p)
-					l++;
+				while (s[i] != c && s[i])
+				{
+					len++;
+					i++;
+				}
 			}
-			w++;
+			pos--;
 		}
-		else
-			i++;
 	}
-	return (l);
-}
-
-char	**fghughngob(char *str, char charset, char **tab)
-{
-	int i;
-	int j;
-	int k;
-
-	i = 0;
-	j = 0;
-	while (i < count_word(str, charset))
-	{
-		if (!(is_charset(str[j], charset)))
-		{
-			k = 0;
-			while (str[j] && (!is_charset(str[j], charset)))
-				tab[i][k++] = str[j++];
-			tab[i][k] = '\0';
-			i++;
-		}
-		else
-			j++;
-	}
-	tab[i] = 0;
-	return (tab);
+	return (len);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	char	**out;
 	int		i;
-	char	**tab;
+	int		j;
+	int		w;
 
-	i = -1;
-	if (!(tab = malloc(sizeof(char*) * (count_word((char*)s, c) + 1))))
+	i = 0;
+	w = 0;
+	j = 0;
+	if (!(out = malloc(sizeof(char**) * (word_count(s, c) + 1))))
 		return (0);
-	while (++i < count_word(s, c))
-		if (!(tab[i] = malloc(sizeof(char) * (word_len(s, c, i) + 1))))
+	while (i < word_count(s, c))
+	{
+		if (!(out[i] = malloc(sizeof(char*) * word_len(s, c, i) + 1)))
 			return (0);
-	return (fghughngob(s, c, tab));
+		i++;
+	}
+	i = 0;
+	while (s[i])
+	{
+		if (i > 0 && (size_t)i > ft_strlen((char*)s) && s[i] == c)
+		{
+			w++;
+			j = 0;
+		}
+		else
+		{
+			out[w][j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	out[++w] = 0;
+	return (out);
+}
+
+int main(int argc, char const *argv[])
+{
+	printf(%d, )
+	return 0;
 }
