@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 13:16:12 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/23 13:56:03 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:40:15 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t i;
 
 	i = 0;
-	while(src[i])
+	while (src[i])
 	{
 		if (size && i < size - 1)
 			*dst++ = src[i];
@@ -25,5 +25,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	if (size)
 		*dst = '\0';
-	return(i);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 03:26:06 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/23 13:34:36 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:40:57 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int				ft_isdigit(int c);
 int				ft_isprint(int c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(char *src);
-size_t			ft_strlcat(char *dest, char *src, size_t size);
+size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlen(char *str);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strrchr(const char *s, int c);
