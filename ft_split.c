@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:40:10 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/24 16:38:55 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 01:01:48 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 int		word_count(char const *s, char c)
 {
-	int i;
+	size_t i;
 	int w;
 
 	i = 0;
-	w = 0;
+	w = 1;
+	while(s[i] == c)
+		i++;
 	while (s[i])
 	{
-		if (i > 0 && (size_t)i > ft_strlen((char*)s) && s[i] == c)
+		if (s[i] == c && s[i + 1] != c && s[i + 1])
 			w++;
 		i++;
 	}
@@ -30,17 +32,19 @@ int		word_count(char const *s, char c)
 
 int		word_len(char const *s, char c, int pos)
 {
-	int i;
+	size_t i;
 	int len;
 
 	i = 0;
 	len = 0;
+	while(s[i] == c)
+		i++;
 	while (s[i])
 	{
-		if ((i > 0 && (size_t)i > ft_strlen((char*)s) && s[i] == c && pos > -1)
+		i++;
+		if ((s[i] == c && s[i + 1] != c && s[i + 1] && pos > -1)
 			|| pos == 0)
 		{
-			i++;
 			if (!pos)
 			{
 				while (s[i] != c && s[i])
@@ -55,6 +59,36 @@ int		word_len(char const *s, char c, int pos)
 	return (len);
 }
 
+char **malloc_set(const char *s, char c)
+{
+	int i;
+	char **out;
+
+	i = 0;
+	if (!word_count(s, c))
+	{
+		if (!(out = malloc(sizeof(char**) * 2)))
+			return (0);
+		if (!(out[i] = malloc(sizeof(char*) * 1)))
+			return (0);
+	}
+	else
+	{
+		if (!(out = malloc(sizeof(char**) * (word_count(s, c) + 1))))
+			return (0);
+		while (i < word_count(s, c))
+		{
+			if (!(out[i] = malloc(sizeof(char*) * word_len(s, c, i) + 1)))
+				return (0);
+			i++;
+		}
+		if (!word_count(s, c))
+			if (!(out[i] = malloc(sizeof(char*) * 1)))
+				return (0);
+	}
+	return (out);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**out;
@@ -62,38 +96,25 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		w;
 
-	i = 0;
 	w = 0;
 	j = 0;
-	if (!(out = malloc(sizeof(char**) * (word_count(s, c) + 1))))
-		return (0);
-	while (i < word_count(s, c))
-	{
-		if (!(out[i] = malloc(sizeof(char*) * word_len(s, c, i) + 1)))
-			return (0);
-		i++;
-	}
 	i = 0;
+	out = malloc_set(s, c);
+	while(s[i] == c)
+		i++;
 	while (s[i])
 	{
-		if (i > 0 && (size_t)i > ft_strlen((char*)s) && s[i] == c)
+		if (s[i] == c && s[i + 1] != c && s[i + 1])
 		{
-			w++;
+			out[w++][j] = '\0';
 			j = 0;
 		}
-		else
-		{
-			out[w][j] = s[i];
-			j++;
-		}
+		else if (s[i] != c)
+			out[w][j++] = s[i];
 		i++;
 	}
+	out[w][j] = '\0';
 	out[++w] = 0;
 	return (out);
 }
 
-int main(int argc, char const *argv[])
-{
-	printf(%d, )
-	return 0;
-}
