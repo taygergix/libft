@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:33:48 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/25 18:23:57 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 20:03:28 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-

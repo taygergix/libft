@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 13:29:24 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/22 17:15:14 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 19:54:01 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen((char*)s1);
 	while (is_charset(s1[i], (char*)set))
 		i++;
+	if (!s1[i])
+		return ("");
 	while ((len - i) && is_charset(s1[len - 1], (char*)set))
 		len--;
 	return (ft_substr(s1, i, len - i));

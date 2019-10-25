@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:41:15 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/25 01:31:53 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 19:26:23 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*out;
 
 	i = 0;
+	if (!s[0])
+		return (0);
 	if (start >= ft_strlen((char*)s))
 		return ("");
 	if (!(out = ft_calloc(sizeof(char), len + 1)))
