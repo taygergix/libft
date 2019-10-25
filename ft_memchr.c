@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 14:38:33 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/15 15:26:04 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 18:24:26 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	tmp = (char*)s;
-	while (*tmp && i < n)
+	while (i < n)
 	{
 		if (*tmp == c)
 			return ((void*)tmp);

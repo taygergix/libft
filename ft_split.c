@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:40:10 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/25 02:24:09 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 13:31:36 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int		word_count(char const *s, char c)
 {
-	size_t i;
-	int w;
+	size_t	i;
+	int		w;
 
 	i = 0;
 	w = 0;
-	while(s[i] == c)
+	while (s[i] == c)
 		i++;
 	while (s[i])
 	{
@@ -33,12 +33,12 @@ int		word_count(char const *s, char c)
 
 int		word_len(char const *s, char c, int pos)
 {
-	size_t i;
-	int len;
+	size_t	i;
+	int		len;
 
 	i = 0;
 	len = 0;
-	while(s[i] == c)
+	while (s[i] == c)
 		i++;
 	while (s[i])
 	{
@@ -60,10 +60,10 @@ int		word_len(char const *s, char c, int pos)
 	return (len);
 }
 
-char **malloc_set(const char *s, char c)
+char	**malloc_set(const char *s, char c)
 {
-	int i;
-	char **out;
+	int		i;
+	char	**out;
 
 	i = 0;
 	if (!(out = malloc(sizeof(char**) * (word_count(s, c) + 1))))
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	i = 0;
 	out = malloc_set(s, c);
-	while(s[i] == c)
+	while (s[i] == c)
 		i++;
 	while (s[i])
 	{
@@ -105,4 +105,3 @@ char	**ft_split(char const *s, char c)
 	out[w + (word_len(s, c, 0) ? 1 : 0)] = 0;
 	return (out);
 }
-

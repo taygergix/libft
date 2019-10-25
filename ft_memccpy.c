@@ -6,11 +6,12 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 06:10:38 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/15 09:51:42 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 18:37:18 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <libc.h>
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
@@ -24,8 +25,8 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		destt[i] = srcc[i];
-		if (srcc[i] == c)
-			return ((void*)&destt[i + 1]);
+		if ((unsigned char)srcc[i] == (unsigned char)c)
+			return (&destt[i + 1]);
 		i++;
 	}
 	return (0);
