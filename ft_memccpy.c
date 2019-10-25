@@ -6,12 +6,11 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 06:10:38 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/25 18:37:18 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 18:45:24 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <libc.h>
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
