@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 11:40:10 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/25 01:01:48 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/25 02:24:09 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		word_count(char const *s, char c)
 	int w;
 
 	i = 0;
-	w = 1;
+	w = 0;
 	while(s[i] == c)
 		i++;
 	while (s[i])
@@ -27,6 +27,7 @@ int		word_count(char const *s, char c)
 			w++;
 		i++;
 	}
+	w++;
 	return (w);
 }
 
@@ -65,26 +66,13 @@ char **malloc_set(const char *s, char c)
 	char **out;
 
 	i = 0;
-	if (!word_count(s, c))
+	if (!(out = malloc(sizeof(char**) * (word_count(s, c) + 1))))
+		return (0);
+	while (i < word_count(s, c))
 	{
-		if (!(out = malloc(sizeof(char**) * 2)))
+		if (!(out[i] = malloc(sizeof(char*) * word_len(s, c, i) + 1)))
 			return (0);
-		if (!(out[i] = malloc(sizeof(char*) * 1)))
-			return (0);
-	}
-	else
-	{
-		if (!(out = malloc(sizeof(char**) * (word_count(s, c) + 1))))
-			return (0);
-		while (i < word_count(s, c))
-		{
-			if (!(out[i] = malloc(sizeof(char*) * word_len(s, c, i) + 1)))
-				return (0);
-			i++;
-		}
-		if (!word_count(s, c))
-			if (!(out[i] = malloc(sizeof(char*) * 1)))
-				return (0);
+		i++;
 	}
 	return (out);
 }
@@ -114,7 +102,7 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	out[w][j] = '\0';
-	out[++w] = 0;
+	out[w + (word_len(s, c, 0) ? 1 : 0)] = 0;
 	return (out);
 }
 
