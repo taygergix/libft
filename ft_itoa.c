@@ -6,13 +6,13 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 11:03:10 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/26 22:17:13 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/27 01:42:50 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		count_int_size(int n)
+static int		count_int_size(int n)
 {
 	int c;
 
@@ -25,7 +25,7 @@ int		count_int_size(int n)
 	return (++c);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*a;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 03:26:06 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/26 22:54:59 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/27 01:23:08 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int				ft_atoi(char *str);
+int				ft_atoi(const char *str);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
 char			*ft_strchr(const char *s, int c);
-char			*ft_strdup(char *src);
+char			*ft_strdup(const char *src);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
-size_t			ft_strlen(char *str);
+size_t			ft_strlen(const char *str);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strrchr(const char *s, int c);
 int				ft_tolower(int c);

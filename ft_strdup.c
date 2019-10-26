@@ -6,13 +6,13 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 13:34:21 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/14 13:05:45 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/27 01:40:15 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+static char		*ft_strcpy(char *dest, char *src)
 {
 	int n;
 
@@ -26,11 +26,11 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strdup(char *src)
+char			*ft_strdup(const char *src)
 {
 	char *cpy;
 
 	if (!(cpy = malloc(sizeof(char) * ft_strlen(src) + 1)))
 		return (0);
-	return (ft_strcpy(cpy, src));
+	return (ft_strcpy(cpy, (char *)src));
 }

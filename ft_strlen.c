@@ -6,13 +6,13 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 15:16:54 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/14 10:49:56 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/27 01:23:23 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int n;
 
