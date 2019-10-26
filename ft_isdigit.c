@@ -6,11 +6,9 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:24:47 by taygergix         #+#    #+#             */
-/*   Updated: 2019/10/14 10:53:13 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/26 22:13:14 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

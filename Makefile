@@ -6,7 +6,7 @@
 #    By: tamather <tamather@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 08:30:12 by taygergix         #+#    #+#              #
-#    Updated: 2019/10/25 01:02:27 by tamather         ###   ########.fr        #
+#    Updated: 2019/10/26 22:56:29 by tamather         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,26 +15,30 @@ SRCS = ft_atoi.c ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
-
-HEADER = -I ./
+DFLAGS= -MP -MMD -MF $*.d -MT '$@'
 
 NAME = libft.a
 
-OBJS = ${SRCS:.c=.o}
+OBJS = $(SRCS:.c=.o)
+DEPS = $(SRCS:.c=.d)
 
-.c.o:
-			${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.c=.o}
+%.o:	%.c
+			$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@ 
 
-$(NAME): 	${OBJS}
-			ar rc ${NAME} ${OBJS}
-			ranlib ${NAME}
+$(NAME): 	$(OBJS)
+			ar rc $(NAME) $(OBJS)
+			ranlib $(NAME)
 
-all:	${NAME}
+all:		$(NAME)
 
 clean:
-			rm -f  ${OBJS}
+			rm -f 	$(OBJS) $(DEPS)
 
 fclean:		clean
-			rm -f ${NAME}
+			rm -f	$(NAME) 
 
 re: fclean all
+
+-include $(DEPS)
+
+.PHONY:	all clean fclean re

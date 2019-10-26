@@ -6,11 +6,9 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 08:16:50 by taygergix         #+#    #+#             */
-/*   Updated: 2019/10/14 10:53:31 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/26 22:13:28 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

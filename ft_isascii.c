@@ -6,11 +6,9 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 08:04:59 by taygergix         #+#    #+#             */
-/*   Updated: 2019/10/14 10:53:00 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/26 22:13:08 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_isascii(int c)
 {

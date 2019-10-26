@@ -6,11 +6,9 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/07 23:29:39 by tamather          #+#    #+#             */
-/*   Updated: 2019/10/15 10:12:26 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/26 22:11:28 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_atoi(char *str)
 {

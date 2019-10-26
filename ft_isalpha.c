@@ -6,11 +6,9 @@
 /*   By: tamather <tamather@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:20:47 by taygergix         #+#    #+#             */
-/*   Updated: 2019/10/14 10:52:36 by tamather         ###   ########.fr       */
+/*   Updated: 2019/10/26 22:49:08 by tamather         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_isalpha(int c)
 {
